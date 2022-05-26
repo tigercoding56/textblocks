@@ -46,24 +46,15 @@ class TextBlocks {
     }
     
     xtox({url}) {
-        return fetch(url).then(response => response.text())
+     return  args.text.slice(args.start , args.finish);
     }
     
     jsonExtract({name,data}) {
-        var parsed = JSON.parse(data)
-        if (name in parsed) {
-            var out = parsed[name]
-            var t = typeof(out)
-            if (t == "string" || t == "number")
-                return out
-            if (t == "boolean")
-                return t ? 1 : 0
-            return JSON.stringify(out)
-        }
-        else {
-            return  args.text.slice(args.start , args.finish);
-        }
+     return JSON.stringify(out)
     }
+     
+        
+    
 }
 
 Scratch.extensions.register(new ScratchFetch())
