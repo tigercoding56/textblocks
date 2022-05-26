@@ -10,15 +10,15 @@ class TextBlocks {
                         {
                             "opcode": "xtox",
                             "blockType": "reporter",
-                            "text": "fetch data from [url]",
+                            "text": "extract letters [start] to [finish] from [text]",
                             "arguments": {
                                 "start": {
-                                    "type": "string",
-                                    "defaultValue": "3"
+                                    "type": "number",
+                                    "defaultValue": 3
                                 },
                                 "finish": {
-                                    "type": "string",
-                                    "defaultValue": "4"
+                                    "type": "number",
+                                    "defaultValue": 4
                                 },
                                 "text": {
                                     "type": "string",
@@ -45,7 +45,7 @@ class TextBlocks {
         };
     }
     
-    fetchURL({url}) {
+    xtox({url}) {
         return fetch(url).then(response => response.text())
     }
     
@@ -61,7 +61,7 @@ class TextBlocks {
             return JSON.stringify(out)
         }
         else {
-            return ""
+            return  args.text.slice(args.start , args.finish);
         }
     }
 }
