@@ -1,4 +1,4 @@
-class ScratchFetch {
+class TextBlocks {
     constructor() {
     }
     
@@ -8,13 +8,21 @@ class ScratchFetch {
             "name": "Fetch",
             "blocks": [
                         {
-                            "opcode": "fetchURL",
+                            "opcode": "xtox",
                             "blockType": "reporter",
                             "text": "fetch data from [url]",
                             "arguments": {
-                                "url": {
+                                "start": {
                                     "type": "string",
-                                    "defaultValue": "https://api.weather.gov/stations/KNYC/observations"
+                                    "defaultValue": "3"
+                                },
+                                "finish": {
+                                    "type": "string",
+                                    "defaultValue": "4"
+                                },
+                                "text": {
+                                    "type": "string",
+                                    "defaultValue": "behind"
                                 },
                             }
                         },
